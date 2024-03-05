@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>币安广场帖子跳转</title>
+<script>
+  // 获取当前 URL
+  var currentUrl = window.location.href;
+  
+  // 检测 URL 末尾是否是数字，并提取出来
+  var matches = currentUrl.match(/(\d+)$/);
+  if (matches && matches.length > 1) {
+    // 获取末尾的数字
+    var number = matches[1];
+    
+    // 构造跳转的 URL
+    var redirectUrl = 'https://www.binance.com/zh-CN/feed/post/' + number;
+    
+    // 执行跳转
+    window.location.href = redirectUrl;
+  }
+</script>
+</head>
+<body>
+<!-- 在此添加页面内容 -->
+</body>
+</html>
