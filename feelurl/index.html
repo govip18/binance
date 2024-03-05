@@ -9,7 +9,7 @@
   var currentUrl = window.location.href;
   
   // 提取 URL 末尾的任何字符
-  var path = currentUrl.split('/').pop();
+  var path = currentUrl.split('?').pop();
   
   // 构造跳转的 URL
   var redirectUrl = 'https://www.binance.com/zh-CN/feed/post/' + path;
