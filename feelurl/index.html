@@ -8,17 +8,22 @@
   // 获取当前 URL
   var currentUrl = window.location.href;
   
-  // 提取 URL 中的路径部分
-  var path = currentUrl.split('/').pop();
+  // 提取 URL 中的参数部分
+  var params = currentUrl.split('?')[1];
   
-  // 去除路径中的额外参数部分（以问号开始）
-  var pathWithoutQuery = path.split('?')[0];
+  // 提取参数中的数字或字符
+  var target = params.match(/[0-9a-zA-Z]+/);
   
-  // 构造跳转的 URL
-  var redirectUrl = 'https://www.binance.com/zh-CN/feed/post/' + pathWithoutQuery;
-  
-  // 执行跳转
-  window.location.href = redirectUrl;
+  if (target) {
+    // 获取目标数字或字符
+    var targetValue = target[0];
+    
+    // 构造跳转的 URL
+    var redirectUrl = 'https://www.binance.com/zh-CN/feed/post/' + targetValue;
+    
+    // 执行跳转
+    window.location.href = redirectUrl;
+  }
 </script>
 </head>
 <body>
