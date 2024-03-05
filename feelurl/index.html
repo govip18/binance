@@ -1,3 +1,6 @@
+明白了，您需要在跳转后去除 URL 中的问号部分。以下是更新后的代码：
+
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -8,11 +11,14 @@
   // 获取当前 URL
   var currentUrl = window.location.href;
   
-  // 提取 URL 末尾的任何字符
-  var path = currentUrl.split('?').pop();
+  // 提取 URL 中的路径部分
+  var path = currentUrl.split('/').pop();
+  
+  // 去除路径中的问号部分
+  var pathWithoutQuery = path.split('?')[0];
   
   // 构造跳转的 URL
-  var redirectUrl = 'https://www.binance.com/zh-CN/feed/post/' + path;
+  var redirectUrl = 'https://www.binance.com/zh-CN/feed/post/' + pathWithoutQuery;
   
   // 执行跳转
   window.location.href = redirectUrl;
@@ -22,3 +28,5 @@
 <!-- 在此添加页面内容 -->
 </body>
 </html>
+```
+
