@@ -1,6 +1,3 @@
-明白了，您需要在跳转后去除 URL 中的问号部分。以下是更新后的代码：
-
-```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -14,7 +11,7 @@
   // 提取 URL 中的路径部分
   var path = currentUrl.split('/').pop();
   
-  // 去除路径中的问号部分
+  // 去除路径中的额外参数部分（以问号开始）
   var pathWithoutQuery = path.split('?')[0];
   
   // 构造跳转的 URL
@@ -28,5 +25,3 @@
 <!-- 在此添加页面内容 -->
 </body>
 </html>
-```
-
